@@ -1,4 +1,4 @@
-
+import 'dart:js_interop';
 
 /// 函数 void 返回值可选；在规范编程建议加上返回类型
 void fun() {}
@@ -25,9 +25,23 @@ selLocParam(int i, int d, [a, b, c = 123]) {}
 /// 由 required 修饰的参数 为强制入参参数
 /// 不可设置默认参数
 /// 只修饰可选命名参数，不可修饰常规、可选位置参数
-forceParam(int i,{ required String a}){}
+forceParam(int i, {required String a}) {}
 // forceParam1(int i,[ required String a = "123"]){}  ，required 报错 !!
 
+/// main 顶级函数
+/// 所有函数都是一级函数，可当参数传入
+/// 匿名函数、Lambada表达式、Closure闭包，属于同一概念，也就是没有名字的方法
+/// 箭头函数
+/// 词法作用域，即声明变量时就已经确定了变量的作用域，方法体内或类内，子作用域可以访问父作用域，父作用域不能访问子作用域
+/// 词法闭包，通俗的理解是：函数包含另一个函数并返回 Function 函数对象；即灵活处理二级包装函数，简化函数之间的复杂调用
+/// 注意，类内部的静态方法，是直接通过 类.方法() 调用，而不是通过类实例来调用，类().方法()
+funMain() {}
+
+/// 所有的函数都有返回值。没有显式返回语句的函数最后一行默认为执行 return null;
+funDef(){}
+
 void main() {
+
+  Function.apply((a,b)=>{}, [String,int]);
 
 }
