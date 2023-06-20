@@ -40,6 +40,7 @@ funMain() {}
 /// 所有的函数都有返回值。没有显式返回语句的函数最后一行默认为执行 return null;
 funDef(){}
 
+/// 一个方法不能同时使用可选位置参数和可选命名参数。
 void main() {
 
   Function.apply((a,b)=>{}, [String,int]);
