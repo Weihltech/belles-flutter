@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/belles-flutter.iml" filepath="$PROJECT_DIR$/.idea/belles-flutter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/belles.iml" filepath="$PROJECT_DIR$/belles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/belles_android.iml" filepath="$PROJECT_DIR$/android/belles_android.iml" />
     </modules>
   </component>
 </project>
