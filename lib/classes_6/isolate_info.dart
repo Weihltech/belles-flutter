@@ -1,4 +1,5 @@
 
+/// https://dart.cn/guides/language/concurrency#how-isolates-work
 /// Dart 中的并发
 /// async-await ; isolate ; Future - Stream
 /// 1、在应用中，所有的 Dart 代码都在 isolate 中运行。
