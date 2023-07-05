@@ -46,10 +46,8 @@ class CakeInfo extends StatelessWidget {
     return const Expanded(
         flex: 1,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 30,
-            ),
             Text(
               "Strawberry Pavlova",
               maxLines: 1,
@@ -124,11 +122,17 @@ class Tipsub extends StatelessWidget {
           const SizedBox(
             height: 3,
           ),
-          Text(title.toUpperCase(),maxLines: 1,),
+          Text(
+            title.toUpperCase(),
+            maxLines: 1,
+          ),
           const SizedBox(
             height: 9,
           ),
-          Text(sub.toLowerCase(),maxLines: 1,)
+          Text(
+            sub.toLowerCase(),
+            maxLines: 1,
+          )
         ],
       );
 }
@@ -138,7 +142,7 @@ class StarScores extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox(
-        width: 100,
+        width: 150,
         height: 35,
         child: Row(
           children: [
