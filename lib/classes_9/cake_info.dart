@@ -26,7 +26,16 @@ class CakeCard extends StatelessWidget {
           shape: RoundedRectangleBorder(
               side: BorderSide(color: Colors.red),
               borderRadius: BorderRadius.all(Radius.circular(30.0))),
-          child: Row(children: [CakeInfo(), CakeImage()])));
+          child: Row(children: [
+            SizedBox(
+              width: 16,
+            ),
+            CakeInfo(),
+            SizedBox(
+              width: 16,
+            ),
+            CakeImage()
+          ])));
 }
 
 class CakeInfo extends StatelessWidget {
@@ -34,28 +43,133 @@ class CakeInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
-      width: 260.0,
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.fromLTRB(0, 30, 0, 18),
-            child: const Text("Strawberry Pavlova",style: TextStyle(
-              fontSize: 26,fontWeight: FontWeight.w100,color: Colors.black87
-            ),),
-          ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-            child: const Text("an upright or sloping surface of a structure or object that is not the top or bottom and generally not the front or back.",style: TextStyle(
-                fontSize: 20,color: Colors.black54
-            ),textAlign:TextAlign.center),
-          )
-
-
-        ],
-      ),
-    );
+    return const Expanded(
+        flex: 1,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 30,
+            ),
+            Text(
+              "Strawberry Pavlova",
+              maxLines: 1,
+              style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.w100,
+                  color: Colors.black87),
+            ),
+            SizedBox(
+              height: 18,
+            ),
+            Text(
+                "它是用面粉与鸡蛋、牛奶、坚果和蜂蜜混合而成的。他们还有一种叫做“satura”的蛋糕，是一种扁平的重蛋糕。在罗马时期，蛋糕的名称变成了源",
+                maxLines: 6,
+                style: TextStyle(fontSize: 18, color: Colors.black54),
+                textAlign: TextAlign.center),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                StarScores(),
+                SizedBox(
+                  width: 18,
+                ),
+                Text("170 Revlews")
+              ],
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Descs()
+          ],
+        ));
   }
+}
+
+class Descs extends StatelessWidget {
+  const Descs({super.key});
+
+  @override
+  Widget build(BuildContext context) => const Row(
+        children: [
+          SizedBox(
+            width: 16,
+          ),
+          Expanded(child: Tipsub(Icons.kitchen, "PREP", "25 min")),
+          Expanded(child: Tipsub(Icons.timelapse_outlined, "COOK", "1 hr")),
+          Expanded(child: Tipsub(Icons.restaurant, "FEEDS", "4 ~ 6")),
+          SizedBox(
+            width: 16,
+          ),
+        ],
+      );
+}
+
+class Tipsub extends StatelessWidget {
+  final String title;
+  final String sub;
+  final IconData icon;
+
+  const Tipsub(this.icon, this.title, this.sub, {super.key});
+
+  @override
+  Widget build(BuildContext context) => Column(
+        children: [
+          Icon(
+            icon,
+            color: Colors.redAccent,
+          ),
+          const SizedBox(
+            height: 3,
+          ),
+          Text(title.toUpperCase(),maxLines: 1,),
+          const SizedBox(
+            height: 9,
+          ),
+          Text(sub.toLowerCase(),maxLines: 1,)
+        ],
+      );
+}
+
+class StarScores extends StatelessWidget {
+  const StarScores({super.key});
+
+  @override
+  Widget build(BuildContext context) => SizedBox(
+        width: 100,
+        height: 35,
+        child: Row(
+          children: [
+            Expanded(
+                child: Icon(
+              Icons.star,
+              color: Colors.yellow.shade800,
+            )),
+            Expanded(
+                child: Icon(
+              Icons.star,
+              color: Colors.yellow.shade800,
+            )),
+            Expanded(
+                child: Icon(
+              Icons.star,
+              color: Colors.yellow.shade800,
+            )),
+            Expanded(
+                child: Icon(
+              Icons.star,
+              color: Colors.yellow.shade800,
+            )),
+            const Expanded(
+                child: Icon(
+              Icons.star,
+              color: Colors.black26,
+            )),
+          ],
+        ),
+      );
 }
 
 class CakeImage extends StatelessWidget {
@@ -63,6 +177,7 @@ class CakeImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Expanded(
+        flex: 2,
         child: Stack(
           children: [
             Image.network(
