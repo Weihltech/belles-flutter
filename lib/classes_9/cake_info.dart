@@ -63,7 +63,7 @@ class CakeInfo extends StatelessWidget {
                 "它是用面粉与鸡蛋、牛奶、坚果和蜂蜜混合而成的。他们还有一种叫做“satura”的蛋糕，是一种扁平的重蛋糕。在罗马时期，蛋糕的名称变成了源",
                 maxLines: 6,
                 style: TextStyle(fontSize: 18, color: Colors.black54),
-                textAlign: TextAlign.center),
+                textAlign: TextAlign.center,),
             SizedBox(
               height: 15,
             ),
